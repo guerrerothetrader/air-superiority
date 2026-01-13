@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Air Superiority — Final Arcade</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="start-screen" class="overlay-screen">
+    <h1 class="main-title">Air Superiority</h1>
+    <p style="color:#ccc; margin-top:10px;">Sobrevive a las oleadas. Provoca fallos en los misiles.</p>
+    <p class="press-start">Pulsa ESPACIO o ENTER para Empezar</p>
+    <div class="controls-hud" style="margin-top: 40px; font-size: 14px;">
+        WASD/Flechas: Volar | F: Bengalas | E: Maniobra Evasiva
+    </div>
+</div>
+
+<div id="gameover-screen" class="overlay-screen hidden">
+    <h2 style="color:#f55; margin:0;">¡PILOTO DERRIBADO!</h2>
+    <div style="font-size: 2.5em; color: #fd0;" id="final-score-txt">00000</div>
+    
+    <div id="save-score-zone" style="text-align:center; margin-top:20px;">
+        <p style="color:#8ac;">INTRODUCE TUS SIGLAS (MAX 3)</p>
+        <input type="text" id="player-name" maxlength="3" style="background:#000; border:1px solid #0ff; color:#0ff; text-align:center; padding:10px; font-size:1.2em; width:80px;">
+        <br><br>
+        <button class="action-btn" onclick="saveScore()">GUARDAR Y REINTENTAR</button>
+    </div>
+
+    <div id="leaderboard" style="margin-top:20px; width:250px; border-top:1px solid #0ff3;">
+        <p style="color:#0ff; font-size:0.8em; text-align:center;">MEJORES PILOTOS</p>
+        <div id="scores-list"></div>
+    </div>
+</div>
+
+<div id="hud-layer" class="hidden">
+  <div class="hud-box">
+    <div id="scoreInfo" style="color:#aff; font-weight:bold; letter-spacing: 1px;">SCORE: 00000 | OLEADA: 1</div>
+    <div id="statusInfo" style="margin-top:5px; color:#fff; font-size:14px;">BENGALAS: 3 | MISILES: 0</div>
+  </div>
+</div>
+<canvas id="c"></canvas>
+
+
+<script src="app.js"></script>
+</body>
+</html>
